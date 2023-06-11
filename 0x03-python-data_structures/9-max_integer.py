@@ -6,4 +6,4 @@ def max_integer(my_list=[]):
     else:
         list = my_list[:]
         list.sort()
-        return list[-1]
+        return list[-1] if len(list) > 0 else None
