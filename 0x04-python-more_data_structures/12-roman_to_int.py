@@ -17,6 +17,6 @@ def roman_to_int(roman_string):
     result = 0
     for i in range(len(vals)):
         result += vals[i]
-    if len(vals) > 1 and vals[0] < vals[1]:
-        result -= vals[0] * 2
+        if vals[i] > vals[i-1] and i != 0:
+            result -= (vals[i-1] * 2)
     return result
