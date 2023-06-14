@@ -6,5 +6,6 @@ def best_score(a_dictionary):
     else:
         max = sorted(a_dictionary.values())[-1]
         for key in a_dictionary:
-            if a_dictionary[key] == max:
-                return key
+            if a_dictionary[key] is not None and a_dictionary[key] == max:
+                return (key)
+    return None
