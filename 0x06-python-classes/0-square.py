@@ -1,7 +1,7 @@
-#!usr/bin/python3
+#!/usr/bin/python3
+""" square class """
 
-""" This module represents A Square class """
 
 class Square:
-    """ A square class"""
+    """square"""
     pass
