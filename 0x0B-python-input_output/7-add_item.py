@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module representes load_from_json_file() function"""
+"""script that adds all arguments to a Python list,then save them to a file"""
 
 from sys import argv
 
