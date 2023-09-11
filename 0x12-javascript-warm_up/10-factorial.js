@@ -1,9 +1,7 @@
 #!/usr/bin/node
 
 function factorial (num) {
-  if (!num || num === 1) return 1;
-  const fact = num * factorial(num - 1);
-  return fact;
+  return((!num || num === 1) ? 1 : num * factorial(num - 1));
 }
 
 const num = parseInt(process.argv[2]);
