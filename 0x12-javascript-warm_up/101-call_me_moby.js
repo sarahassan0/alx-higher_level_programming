@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const callMeMoby = (x, theFunction) => {
+const callMeMoby = function (x, theFunction) {
   while (x--) theFunction();
 };
 exports.callMeMoby = callMeMoby;
