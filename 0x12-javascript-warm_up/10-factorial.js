@@ -2,7 +2,7 @@
 
 function factorial (num) {
   if (!num || num === 1) return 1;
-  const fact = num + factorial(num - 1);
+  const fact = num * factorial(num - 1);
   return fact;
 }
 
