@@ -14,7 +14,6 @@ class Rectangle {
         str += 'X';
       }
       console.log(str);
-      console.log();
     }
   }
 }

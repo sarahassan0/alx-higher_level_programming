@@ -10,7 +10,6 @@ class Square extends Square1 {
         str += c;
       }
       console.log(str);
-      console.log();
     }
   }
 }
