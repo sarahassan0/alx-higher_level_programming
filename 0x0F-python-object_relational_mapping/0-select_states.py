@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# """ script that lists all states from the database """
+""" script that lists all states from the database """
 
 import MySQLdb
 from sys import argv as args
@@ -22,6 +22,7 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     db.close()
+
 
 # useing context manager the "with" to manage the closing of the DB conection
 #  instead of closing it manually
