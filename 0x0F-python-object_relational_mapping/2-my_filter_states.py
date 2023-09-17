@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     query = """
             SELECT * FROM states
-            WHERE name = '{}'
+            WHERE name LIKE BINARY '{}'
             ORDER BY id ASC
             """.format(clmn_name)
     cur.execute(query)
