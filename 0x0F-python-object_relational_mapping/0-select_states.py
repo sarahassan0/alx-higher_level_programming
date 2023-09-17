@@ -7,8 +7,8 @@ from sys import argv as args
 
 if __name__ == "__main__":
     try:
-        mysql_username, mysql_password, mysql_db_name = args[1],
-        args[2], args[3]
+        mysql_username, mysql_password, mysql_db_name = args[1],\
+            args[2], args[3]
         db = connect(
             host='localhost',
             port=3306,
@@ -31,8 +31,8 @@ if __name__ == "__main__":
 
 # if __name__ == "__main__":
 #     try:
-#         mysql_username, mysql_password, mysql_db_name = args[1],
-#         args[2], args[3]
+#         mysql_username, mysql_password, mysql_db_name = args[1],\
+#             args[2], args[3]
 #         with connect(
 #             host='localhost',
 #             port=3306,
