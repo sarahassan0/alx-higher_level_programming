@@ -2,14 +2,14 @@
 
 # """ script that lists all states from the database """
 
-from MySQLdb import connect, Error
+import MySQLdb
 from sys import argv as args
 
 if __name__ == "__main__":
     try:
         mysql_username, mysql_password, mysql_db_name = args[1],\
             args[2], args[3]
-        db = connect(
+        db = MySQLdb.connect(
             host='localhost',
             port=3306,
             user=mysql_username,
@@ -23,7 +23,7 @@ if __name__ == "__main__":
             print(row)
         cur.close()
         db.close()
-    except Error as err:
+    except MySQLdb.Error as err:
         print("MySQL Error:", err)
 
 # useing context manager the "with" to manage the closing of the DB conection
