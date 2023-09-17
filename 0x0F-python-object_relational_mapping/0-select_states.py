@@ -1,23 +1,50 @@
 #!/usr/bin/python3
 
-""" script that lists all states from database """
+# """ script that lists all states from the database """
 
-import MySQLdb
+from MySQLdb import connect, Error
 from sys import argv as args
 
 if __name__ == "__main__":
-    mysql_username, mysql_password, mysql_db_name = args[1], args[2], args[3]
-    conn = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=mysql_db_name
-    )
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+    try:
+        mysql_username, mysql_password, mysql_db_name = args[1],
+        args[2], args[3]
+        db = connect(
+            host='localhost',
+            port=3306,
+            user=mysql_username,
+            passwd=mysql_password,
+            db=mysql_db_name
+        )
+        cur = db.cursor()
+        cur.execute("SELECT * FROM states ORDER BY id ASC")
+        query_rows = cur.fetchall()
+        for row in query_rows:
+            print(row)
+        cur.close()
+        db.close()
+    except Error as err:
+        print("MySQL Error:", err)
+
+# useing context manager the "with" to manage the closing of the DB conection
+#  instead of closing it manually
+
+# if __name__ == "__main__":
+#     try:
+#         mysql_username, mysql_password, mysql_db_name = args[1],
+#         args[2], args[3]
+#         with connect(
+#             host='localhost',
+#             port=3306,
+#             user=mysql_username,
+#             passwd=mysql_password,
+#             db=mysql_db_name
+#         ) as db:
+#             with db.cursor() as cur:
+#                 cur.execute("SELECT * FROM states ORDER BY id ASC")
+#                 query_rows = cur.fetchall()
+#                 for row in query_rows:
+#                     print(row)
+
+#     except Error as err:
+#         print("MySQL Error:", err)
