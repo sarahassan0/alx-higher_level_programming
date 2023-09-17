@@ -31,7 +31,7 @@ if __name__ == "__main__":
 #     try:
 #         mysql_username, mysql_password, mysql_db_name = args[1],\
 #             args[2], args[3]
-#         with connect(
+#         with MySQLdb.connect(
 #             host='localhost',
 #             port=3306,
 #             user=mysql_username,
@@ -44,5 +44,5 @@ if __name__ == "__main__":
 #                 for row in query_rows:
 #                     print(row)
 
-#     except Error as err:
+#     except MySQLdb.Error as err:
 #         print("MySQL Error:", err)
