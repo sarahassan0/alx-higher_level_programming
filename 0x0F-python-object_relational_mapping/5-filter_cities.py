@@ -27,6 +27,7 @@ if __name__ == "__main__":
     cur.execute(query, (clmn_name,))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row[0])
+        print(row[0], end="" if row == query_rows[-1] else ', ')
+    print()
     cur.close()
     db.close()
