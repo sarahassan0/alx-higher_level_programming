@@ -50,3 +50,4 @@
 | 15. City relationship | [relationship_city.py](./relationship_city.py), [relationship_state.py](./relationship_state.py), [100-relationship_states_cities.py](./100-relationship_states_cities.py) |
 | 16. List relationship | [101-relationship_states_cities_list.py](./101-relationship_states_cities_list.py) |
 | 17. From city | [102-relationship_cities_states_list.py](./102-relationship_cities_states_list.py) |
+
