@@ -8,7 +8,7 @@ if __name__ == '__main__':
     from sys import argv
 
     data = {'q': argv[1] if len(argv) > 1 else ""}
-    
+
     with requests.post('http://0.0.0.0:5000/search_user', data=data) as res:
         try:
             res = res.json()
