@@ -7,8 +7,8 @@ if __name__ == "__main__":
     from sys import argv
 
     url = argv[1]
-    data = {
-        'email': argv[2]
-    }
-    with requests.post(url, data=data) as res:
-        print(res.text())
+    with requests.get(url) as res:
+        if (res.status_code >= 400):
+            print(f'Error code: {res.status_code}')
+        else:
+            print(res.text)
